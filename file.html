@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Masber Property adalah agen properti terpercaya yang membantu Anda mendapatkan hunian impian dengan legalitas 100% aman dan proses KPR transparan.">
+    <meta name="keywords" content="masber property, jual beli rumah, rumah murah, properti, rumah KPR, agen properti">
+    <title>Masber Property - Temukan Rumah Impian Anda</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar for premium look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- TOP NOTIFICATION BAR -->
+    <div class="bg-blue-900 text-blue-100 text-xs py-2 px-4 text-center font-medium">
+        🎉 Promo Ramadhan & Idul Fitri: Subsidi Bunga KPR mulai 2.5% fixed 2 tahun! Hubungi kami segera.
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center cursor-pointer" onclick="navigateTo('home')">
+                    <span class="p-2.5 bg-blue-600 rounded-xl text-white mr-3 shadow-md shadow-blue-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                        </svg>
+                    </span>
+                    <div>
+                        <span
+                            class="text-xl font-extrabold tracking-tight text-slate-950 block leading-tight">MASBER</span>
+                        <span
+                            class="text-xs font-semibold text-blue-600 tracking-wider uppercase block -mt-1">PROPERTY</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <button onclick="navigateTo('home')"
+                        class="nav-link text-blue-600 font-semibold text-sm transition-colors duration-200"
+                        id="nav-home">Beranda</button>
+                    <button onclick="scrollToSection('pencarian-section')"
+                        class="nav-link text-slate-600 hover:text-blue-600 font-medium text-sm transition-colors duration-200">Cari
+                        Rumah</button>
+                    <button onclick="scrollToSection('keunggulan-section')"
+                        class="nav-link text-slate-600 hover:text-blue-600 font-medium text-sm transition-colors duration-200">Keunggulan</button>
+                    <button onclick="scrollToSection('testimoni-section')"
+                        class="nav-link text-slate-600 hover:text-blue-600 font-medium text-sm transition-colors duration-200">Testimoni</button>
+                </div>
+
+                <!-- Desktop CTA Button -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <button onclick="openTitipModal()"
+                        class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200">
+                        Titip Jual/Sewa
+                    </button>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Masber%20Property,%20saya%20tertarik%20tanya%20properti"
+                        target="_blank"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-lg shadow-blue-200 hover:shadow-blue-300 transition-all duration-200 flex items-center gap-2">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.454L0 24zm6.59-4.846c1.6.95 3.198 1.451 4.811 1.452 5.518 0 10.006-4.486 10.01-10.004.002-2.673-1.04-5.184-2.937-7.082-1.897-1.898-4.41-2.937-7.083-2.938-5.52.001-10.007 4.489-10.01 10.007-.001 1.737.479 3.431 1.391 4.911l-.955 3.49 3.58-.939zM18.1 14.8c-.333-.167-1.97-.972-2.277-1.084-.307-.113-.53-.167-.753.167-.223.333-.864 1.084-1.059 1.306-.196.223-.39.25-.723.083-.333-.167-1.407-.518-2.68-1.655-1.01-.9-1.671-2.023-1.87-2.356-.198-.333-.021-.513.146-.679.15-.15.333-.389.5-.583.167-.194.222-.333.333-.556.11-.222.056-.417-.028-.583-.083-.167-.753-1.815-1.031-2.485-.27-.65-.547-.563-.753-.574-.195-.01-.417-.013-.64-.013-.223 0-.583.083-.89.417-.306.333-1.168 1.139-1.168 2.778 0 1.639 1.196 3.222 1.362 3.444.167.222 2.354 3.595 5.702 5.044.796.344 1.418.55 1.9.707.8.254 1.527.218 2.102.132.64-.096 1.97-.806 2.249-1.583.278-.778.278-1.444.195-1.583-.083-.14-.306-.222-.64-.389z" />
+                        </svg>
+                        Hubungi Admin
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleMobileMenu()"
+                        class="text-slate-600 focus:outline-none p-2 rounded-lg hover:bg-slate-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-6 h-6" id="menu-icon">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div class="hidden md:hidden bg-white border-b border-slate-100" id="mobile-menu">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <button onclick="navigateTo('home'); toggleMobileMenu()"
+                    class="block w-full text-left px-3 py-2.5 rounded-lg text-blue-600 font-semibold bg-blue-50">Beranda</button>
+                <button onclick="scrollToSection('pencarian-section'); toggleMobileMenu()"
+                    class="block w-full text-left px-3 py-2.5 rounded-lg text-slate-600 font-medium hover:bg-slate-50">Cari
+                    Rumah</button>
+                <button onclick="scrollToSection('keunggulan-section'); toggleMobileMenu()"
+                    class="block w-full text-left px-3 py-2.5 rounded-lg text-slate-600 font-medium hover:bg-slate-50">Keunggulan</button>
+                <button onclick="scrollToSection('testimoni-section'); toggleMobileMenu()"
+                    class="block w-full text-left px-3 py-2.5 rounded-lg text-slate-600 font-medium hover:bg-slate-50">Testimoni</button>
+                <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+                    <button onclick="openTitipModal(); toggleMobileMenu()"
+                        class="w-full text-center border-2 border-blue-600 text-blue-600 px-4 py-2.5 rounded-lg text-sm font-semibold">
+                        Titip Jual/Sewa
+                    </button>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Masber%20Property,%20saya%20tertarik%20tanya%20properti"
+                        target="_blank"
+                        class="w-full text-center bg-blue-600 text-white px-4 py-2.5 rounded-lg text-sm font-semibold flex justify-center items-center gap-2">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.454L0 24zm6.59-4.846c1.6.95 3.198 1.451 4.811 1.452 5.518 0 10.006-4.486 10.01-10.004.002-2.673-1.04-5.184-2.937-7.082-1.897-1.898-4.41-2.937-7.083-2.938-5.52.001-10.007 4.489-10.01 10.007-.001 1.737.479 3.431 1.391 4.911l-.955 3.49 3.58-.939zM18.1 14.8c-.333-.167-1.97-.972-2.277-1.084-.307-.113-.53-.167-.753.167-.223.333-.864 1.084-1.059 1.306-.196.223-.39.25-.723.083-.333-.167-1.407-.518-2.68-1.655-1.01-.9-1.671-2.023-1.87-2.356-.198-.333-.021-.513.146-.679.15-.15.333-.389.5-.583.167-.194.222-.333.333-.556.11-.222.056-.417-.028-.583-.083-.167-.753-1.815-1.031-2.485-.27-.65-.547-.563-.753-.574-.195-.01-.417-.013-.64-.013-.223 0-.583.083-.89.417-.306.333-1.168 1.139-1.168 2.778 0 1.639 1.196 3.222 1.362 3.444.167.222 2.354 3.595 5.702 5.044.796.344 1.418.55 1.9.707.8.254 1.527.218 2.102.132.64-.096 1.97-.806 2.249-1.583.278-.778.278-1.444.195-1.583-.083-.14-.306-.222-.64-.389z" />
+                        </svg>
+                        Hubungi Admin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN WRAPPER (SPA STATE CONTAINERS) -->
+    <main class="grow flex flex-col">
+
+        <!-- ================= HOMEPAGE VIEW ================= -->
+        <div id="view-home" class="block">
+            <!-- HERO SECTION -->
+            <section
+                class="relative bg-blue-950 text-white min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden">
+                <!-- Background Image & Pattern -->
+                <div class="absolute inset-0 z-0">
+                    <img src="./blue_house_bg.png" alt="Rumah Impian Masber Property"
+                        class="w-full h-full object-cover opacity-40 scale-105 transition-transform duration-[10000ms] hover:scale-100">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-950 via-blue-900/90 to-transparent"></div>
+                </div>
+
+                <!-- Content -->
+                <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+                    <div class="max-w-2xl">
+                        <span
+                            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6 uppercase tracking-widest">
+                            🏡 Agen Properti Terpercaya
+                        </span>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none mb-6">
+                            Temukan Rumah Impian Keluarga Bersama <span class="text-blue-400">Masber Property</span>
+                        </h1>
+                        <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+                            Membantu Anda mendapatkan hunian terbaik dengan legalitas 100% aman, proses KPR dibantu
+                            tuntas sampai serah terima kunci, tanpa ribet dan transparan.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button onclick="scrollToSection('pencarian-section')"
+                                class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl text-base shadow-lg shadow-blue-900/30 transition-all duration-200 text-center">
+                                Mulai Cari Rumah
+                            </button>
+                            <button onclick="openTitipModal()"
+                                class="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl text-base backdrop-blur-sm border border-white/15 transition-all duration-200 text-center">
+                                Titip Jual Properti Anda
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEARCH & FILTER SECTION (SMART SEARCH) -->
+            <section id="pencarian-section" class="relative z-20 max-w-6xl mx-auto px-4 -mt-10 sm:-mt-14">
+                <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 md:p-8">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="currentColor" class="w-4 h-4 text-blue-600">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.604 10.604z" />
+                        </svg>
+                        Pencarian Rumah Pintar
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <!-- Filter Lokasi -->
+                        <div class="relative">
+                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Lokasi Wilayah</label>
+                            <select id="filter-lokasi"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white appearance-none transition-all">
+                                <option value="semua">Semua Lokasi</option>
+                                <option value="Bogor">Bogor</option>
+                                <option value="Depok">Depok</option>
+                                <option value="Tangerang">Tangerang</option>
+                                <option value="Jakarta Selatan">Jakarta Selatan</option>
+                            </select>
+                            <div class="absolute right-4 bottom-4 pointer-events-none text-slate-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Filter Harga -->
+                        <div class="relative">
+                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Rentang Harga</label>
+                            <select id="filter-harga"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white appearance-none transition-all">
+                                <option value="semua">Semua Harga</option>
+                                <option value="dibawah-500jt">Dibawah 500 Juta</option>
+                                <option value="500jt-1m">500 Juta - 1 Milyar</option>
+                                <option value="diatas-1m">Diatas 1 Milyar</option>
+                            </select>
+                            <div class="absolute right-4 bottom-4 pointer-events-none text-slate-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Filter Tipe Rumah -->
+                        <div class="relative">
+                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Tipe Rumah</label>
+                            <select id="filter-tipe"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white appearance-none transition-all">
+                                <option value="semua">Semua Tipe</option>
+                                <option value="Subsidi">Subsidi</option>
+                                <option value="Komersil">Komersil</option>
+                                <option value="Cluster Premium">Cluster Premium</option>
+                            </select>
+                            <div class="absolute right-4 bottom-4 pointer-events-none text-slate-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="flex items-end">
+                            <button onclick="applyFilters()"
+                                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-blue-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.604 10.604z" />
+                                </svg>
+                                Terapkan Filter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CATEGORY BUTTONS SECTION -->
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Kategori Properti
+                            Pilihan</h2>
+                        <p class="text-slate-500 mt-1">Eksplor jenis properti unggulan yang siap huni.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+                    <button onclick="filterCategory('semua')" id="btn-cat-semua"
+                        class="cat-btn px-6 py-3 rounded-full text-sm font-bold bg-blue-600 text-white shadow-md shadow-blue-100 transition-all duration-200">
+                        ✨ Semua Rumah
+                    </button>
+                    <button onclick="filterCategory('baru')" id="btn-cat-baru"
+                        class="cat-btn px-6 py-3 rounded-full text-sm font-semibold bg-white text-slate-600 hover:bg-blue-50 hover:text-blue-600 border border-slate-200 transition-all duration-200">
+                        🆕 Rumah Baru
+                    </button>
+                    <button onclick="filterCategory('second')" id="btn-cat-second"
+                        class="cat-btn px-6 py-3 rounded-full text-sm font-semibold bg-white text-slate-600 hover:bg-blue-50 hover:text-blue-600 border border-slate-200 transition-all duration-200">
+                        ♻️ Rumah Second
+                    </button>
+                    <button onclick="filterCategory('cluster')" id="btn-cat-cluster"
+                        class="cat-btn px-6 py-3 rounded-full text-sm font-semibold bg-white text-slate-600 hover:bg-blue-50 hover:text-blue-600 border border-slate-200 transition-all duration-200">
+                        🏰 Cluster Premium
+                    </button>
+                </div>
+            </section>
+
+            <!-- PROPERTIES LIST (GRID) -->
+            <section id="daftar-properti" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="properties-grid">
+                    <!-- Property Cards are dynamically injected here by Javascript -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="empty-state"
+                    class="hidden text-center py-16 bg-white rounded-3xl border border-slate-200 max-w-xl mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-16 h-16 text-slate-300 mx-auto mb-4">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+                    </svg>
+                    <h3 class="text-lg font-bold text-slate-700">Rumah Tidak Ditemukan</h3>
+                    <p class="text-slate-500 text-sm mt-1">Coba sesuaikan filter pencarian atau ubah kategori pilihan
+                        Anda.</p>
+                    <button onclick="resetFilters()"
+                        class="mt-4 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-semibold transition-all">Reset
+                        Pencarian</button>
+                </div>
+            </section>
+
+            <!-- WHY US / ADVANTAGES SECTION -->
+            <section id="keunggulan-section" class="bg-slate-900 text-white py-20 my-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <span class="text-blue-400 text-xs font-bold tracking-widest uppercase block mb-3">Keunggulan
+                            Kami</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Kenapa Harus Membeli Rumah Lewat
+                            Masber Property?</h2>
+                        <p class="text-slate-400 mt-4 text-base">Kami berdedikasi tinggi memberikan pelayanan jual-beli
+                            properti yang menyenangkan, efisien, dan transparan dari awal hingga akhir.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Adv 1 -->
+                        <div class="bg-slate-800/50 border border-slate-700/50 p-8 rounded-2xl">
+                            <span class="inline-flex p-3 bg-blue-500/10 text-blue-400 rounded-xl mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                                </svg>
+                            </span>
+                            <h3 class="text-xl font-bold mb-3">Legalitas 100% Aman</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Semua properti yang dipasarkan di Masber
+                                Property telah melewati kurasi ketat untuk menjamin keabsahan SHM, IMB, dan PBB.</p>
+                        </div>
+                        <!-- Adv 2 -->
+                        <div class="bg-slate-800/50 border border-slate-700/50 p-8 rounded-2xl">
+                            <span class="inline-flex p-3 bg-blue-500/10 text-blue-400 rounded-xl mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5h16.5M5.25 7.5h13.5m-12 3h10.5m-12 3h10.5m-12 3h10.5m-12 3h10.5" />
+                                </svg>
+                            </span>
+                            <h3 class="text-xl font-bold mb-3">KPR Dibantu Tuntas</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Kami bekerja sama dengan belasan bank
+                                nasional terkemuka untuk mencarikan Anda suku bunga promo terbaik dan mengawal berkas
+                                KPR Anda hingga disetujui.</p>
+                        </div>
+                        <!-- Adv 3 -->
+                        <div class="bg-slate-800/50 border border-slate-700/50 p-8 rounded-2xl">
+                            <span class="inline-flex p-3 bg-blue-500/10 text-blue-400 rounded-xl mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+                                </svg>
+                            </span>
+                            <h3 class="text-xl font-bold mb-3">Tanpa Perantara Gaib</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">Transaksi transparan. Tidak ada kenaikan
+                                harga sepihak secara sembunyi-sembunyi. Anda akan dipertemukan langsung dengan pemilik
+                                aslinya.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TESTIMONIALS SECTION -->
+            <section id="testimoni-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <span class="text-blue-600 text-xs font-bold tracking-widest uppercase block mb-3">Testimoni
+                        Bahagia</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Kisah Sukses Bersama Masber
+                        Property</h2>
+                    <p class="text-slate-500 mt-2">Kepuasan pembeli adalah senyuman terbaik kami.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testi 1 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-amber-400 mb-4 gap-1">
+                                <span class="text-lg">★</span><span class="text-lg">★</span><span
+                                    class="text-lg">★</span><span class="text-lg">★</span><span class="text-lg">★</span>
+                            </div>
+                            <p class="text-slate-600 text-sm italic leading-relaxed mb-6">"Prosesnya bener-bener cepet.
+                                KPR saya yang sempat diragukan bank lain, dibantu sama Masber Property sampai approve
+                                100%. CS-nya super ramah dan transparan banget!"</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center">
+                                BP</div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-800">Bambang Pamungkas</h4>
+                                <p class="text-xs text-slate-500">Membeli Cluster Emerald, Bogor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testi 2 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-amber-400 mb-4 gap-1">
+                                <span class="text-lg">★</span><span class="text-lg">★</span><span
+                                    class="text-lg">★</span><span class="text-lg">★</span><span class="text-lg">★</span>
+                            </div>
+                            <p class="text-slate-600 text-sm italic leading-relaxed mb-6">"Pertama kali beli rumah seken
+                                sempat takut masalah sengketa atau surat palsu. Untung dicek tuntas sama tim hukum
+                                Masber Property. Surat-surat aman sampai balik nama!"</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center">
+                                SR</div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-800">Siti Rahma</h4>
+                                <p class="text-xs text-slate-500">Membeli Rumah Seken Minimalis, Depok</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testi 3 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-amber-400 mb-4 gap-1">
+                                <span class="text-lg">★</span><span class="text-lg">★</span><span
+                                    class="text-lg">★</span><span class="text-lg">★</span><span class="text-lg">★</span>
+                            </div>
+                            <p class="text-slate-600 text-sm italic leading-relaxed mb-6">"Saya titip jual rumah warisan
+                                keluarga di Masber Property. Dalam 3 minggu langsung laku terjual dengan harga yang
+                                cocok banget. Transaksi bersih dan rapi."</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-100 text-blue-700 font-bold flex items-center justify-center">
+                                AD</div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-800">Aditya Nugroho</h4>
+                                <p class="text-xs text-slate-500">Penjual Rumah di Tangerang</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= DETAIL VIEW ================= -->
+        <div id="view-detail" class="hidden">
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <!-- Back Button & Breadcrumbs -->
+                <div class="flex items-center justify-between mb-8">
+                    <button onclick="navigateTo('home')"
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm rounded-xl transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                        Kembali Cari Rumah
+                    </button>
+                    <span class="text-slate-400 text-sm hidden sm:inline" id="detail-breadcrumbs">Beranda / Detail
+                        Rumah</span>
+                </div>
+
+                <!-- Detail Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Left: Gallery & Specs -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <!-- Main Image Display -->
+                        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 p-3">
+                            <div class="relative rounded-2xl overflow-hidden aspect-[16/10] bg-slate-100">
+                                <img id="detail-main-img" src="" alt="Foto Utama Properti"
+                                    class="w-full h-full object-cover transition-opacity duration-300">
+                                <span id="detail-badge-status"
+                                    class="absolute top-4 left-4 bg-blue-600 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow uppercase"></span>
+                            </div>
+                            <!-- Thumbnails Gallery -->
+                            <div class="grid grid-cols-4 gap-3 mt-3" id="detail-thumbnails-container">
+                                <!-- Thumbnail images injected here -->
+                            </div>
+                        </div>
+
+                        <!-- Ringkasan Spesifikasi Cepat (Quick Specs) -->
+                        <div
+                            class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                            <div class="p-3 bg-slate-50 rounded-xl">
+                                <span class="block text-xs font-semibold text-slate-400 uppercase">Luas Tanah</span>
+                                <span class="text-lg font-bold text-slate-800" id="detail-lt"></span>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl">
+                                <span class="block text-xs font-semibold text-slate-400 uppercase">Luas Bangunan</span>
+                                <span class="text-lg font-bold text-slate-800" id="detail-lb"></span>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl">
+                                <span class="block text-xs font-semibold text-slate-400 uppercase">Kamar Tidur</span>
+                                <span class="text-lg font-bold text-slate-800 flex items-center justify-center gap-1.5">
+                                    🛏️ <span id="detail-kt"></span>
+                                </span>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl">
+                                <span class="block text-xs font-semibold text-slate-400 uppercase">Kamar Mandi</span>
+                                <span class="text-lg font-bold text-slate-800 flex items-center justify-center gap-1.5">
+                                    🛁 <span id="detail-km"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Deskripsi Lengkap -->
+                        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6">
+                            <h2 class="text-2xl font-extrabold text-slate-900 border-b border-slate-100 pb-4">Deskripsi
+                                Properti</h2>
+                            <p class="text-slate-600 leading-relaxed text-base" id="detail-deskripsi"></p>
+                        </div>
+
+                        <!-- Spesifikasi Teknis Detail -->
+                        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6">
+                            <h2 class="text-2xl font-extrabold text-slate-900 border-b border-slate-100 pb-4">
+                                Spesifikasi Detail</h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-sm" id="detail-spec-table">
+                                <!-- Specs injected here -->
+                            </div>
+                        </div>
+
+                        <!-- Fasilitas & Aksesibilitas -->
+                        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6">
+                            <h2 class="text-2xl font-extrabold text-slate-900 border-b border-slate-100 pb-4">Fasilitas
+                                & Akses Terdekat</h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="detail-fasilitas-list">
+                                <!-- Facilities list injected here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar: Price, KPR Calculator & Contact Form -->
+                    <div class="space-y-6">
+                        <!-- Box Harga & WhatsApp Action -->
+                        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6 sticky top-24">
+                            <div>
+                                <span class="text-slate-400 text-xs font-bold uppercase block mb-1">Harga
+                                    Ditawarkan</span>
+                                <h2 class="text-3xl font-extrabold text-blue-600 tracking-tight" id="detail-harga">Rp
+                                    -</h2>
+                                <span
+                                    class="inline-flex items-center gap-1 text-xs text-slate-500 mt-2 bg-slate-100 px-2.5 py-1 rounded-md">
+                                    📋 Sertifikat: <strong id="detail-sertifikat">SHM</strong>
+                                </span>
+                            </div>
+
+                            <hr class="border-slate-100">
+
+                            <!-- Interactive KPR Calculator -->
+                            <div class="bg-slate-50 p-5 rounded-2xl border border-slate-150 space-y-4">
+                                <h3
+                                    class="text-sm font-bold text-slate-800 uppercase tracking-wide flex items-center gap-1.5">
+                                    🧮 Simulasi Cicilan KPR
+                                </h3>
+                                <div class="space-y-3 text-xs">
+                                    <div>
+                                        <label class="block text-slate-500 font-semibold mb-1">Uang Muka (DP) -
+                                            10%</label>
+                                        <input type="text" id="kpr-dp"
+                                            class="w-full bg-white border border-slate-200 p-2 rounded-lg font-bold text-slate-800 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                            readonly>
+                                    </div>
+                                    <div>
+                                        <label class="block text-slate-500 font-semibold mb-1">Bunga Pinjaman (% /
+                                            tahun)</label>
+                                        <select id="kpr-bunga" onchange="calculateKPR()"
+                                            class="w-full bg-white border border-slate-200 p-2 rounded-lg font-bold text-slate-800 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
+                                            <option value="5">5% (Suku Bunga Promo)</option>
+                                            <option value="7" selected>7% (Suku Bunga Standard)</option>
+                                            <option value="9">9% (Suku Bunga Swasta)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-slate-500 font-semibold mb-1">Jangka Waktu
+                                            (Tenor)</label>
+                                        <select id="kpr-tenor" onchange="calculateKPR()"
+                                            class="w-full bg-white border border-slate-200 p-2 rounded-lg font-bold text-slate-800 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
+                                            <option value="10">10 Tahun</option>
+                                            <option value="15" selected>15 Tahun</option>
+                                            <option value="20">20 Tahun</option>
+                                        </select>
+                                    </div>
+                                    <div class="bg-blue-50 p-3 rounded-lg border border-blue-100 mt-2 text-center">
+                                        <span
+                                            class="block text-slate-500 text-[10px] uppercase font-bold tracking-wide">Estimasi
+                                            Angsuran / Bulan</span>
+                                        <span class="text-lg font-extrabold text-blue-700" id="kpr-cicilan-bulanan">Rp
+                                            -</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CTA Buttons -->
+                            <div class="space-y-3">
+                                <a id="btn-wa-survey" href="" target="_blank"
+                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-xl text-center flex justify-center items-center gap-2.5 transition-all shadow-md shadow-blue-200">
+                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                        <path
+                                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.454L0 24zm6.59-4.846c1.6.95 3.198 1.451 4.811 1.452 5.518 0 10.006-4.486 10.01-10.004.002-2.673-1.04-5.184-2.937-7.082-1.897-1.898-4.41-2.937-7.083-2.938-5.52.001-10.007 4.489-10.01 10.007-.001 1.737.479 3.431 1.391 4.911l-.955 3.49 3.58-.939zM18.1 14.8c-.333-.167-1.97-.972-2.277-1.084-.307-.113-.53-.167-.753.167-.223.333-.864 1.084-1.059 1.306-.196.223-.39.25-.723.083-.333-.167-1.407-.518-2.68-1.655-1.01-.9-1.671-2.023-1.87-2.356-.198-.333-.021-.513.146-.679.15-.15.333-.389.5-.583.167-.194.222-.333.333-.556.11-.222.056-.417-.028-.583-.083-.167-.753-1.815-1.031-2.485-.27-.65-.547-.563-.753-.574-.195-.01-.417-.013-.64-.013-.223 0-.583.083-.89.417-.306.333-1.168 1.139-1.168 2.778 0 1.639 1.196 3.222 1.362 3.444.167.222 2.354 3.595 5.702 5.044.796.344 1.418.55 1.9.707.8.254 1.527.218 2.102.132.64-.096 1.97-.806 2.249-1.583.278-.778.278-1.444.195-1.583-.083-.14-.306-.222-.64-.389z" />
+                                    </svg>
+                                    Tanya Admin via WhatsApp
+                                </a>
+                                <button onclick="window.print()"
+                                    class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3.5 px-6 rounded-xl text-center flex justify-center items-center gap-2 transition-all">
+                                    🖨️ Cetak / Simpan PDF Brosur
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand / Intro -->
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <span class="p-2 bg-blue-600 rounded-lg text-white mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                                stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                            </svg>
+                        </span>
+                        <span class="text-xl font-extrabold text-white tracking-tight">MASBER PROPERTY</span>
+                    </div>
+                    <p class="text-sm leading-relaxed text-slate-400">
+                        Pilihan paling bijak mencari properti impian berlisensi aman dengan pelayanan premium di
+                        Jabodetabek.
+                    </p>
+                </div>
+
+                <!-- Nav Quick links -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><button onclick="navigateTo('home')" class="hover:text-blue-400 transition">Beranda</button>
+                        </li>
+                        <li><button onclick="scrollToSection('pencarian-section')"
+                                class="hover:text-blue-400 transition">Cari Rumah</button></li>
+                        <li><button onclick="scrollToSection('keunggulan-section')"
+                                class="hover:text-blue-400 transition">Keunggulan</button></li>
+                        <li><button onclick="openTitipModal()" class="hover:text-blue-400 transition">Titip
+                                Jual</button></li>
+                    </ul>
+                </div>
+
+                <!-- Kontak Legalitas -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Kontak Kami</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li class="flex items-center gap-2">📍 Jl. Masber Pro No. 88, Jakarta Selatan</li>
+                        <li class="flex items-center gap-2">📞 +62 812-3456-7890</li>
+                        <li class="flex items-center gap-2">✉️ info@masberproperty.com</li>
+                    </ul>
+                </div>
+
+                <!-- Socials -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Ikuti Sosial Media</h4>
+                    <p class="text-xs text-slate-400">Ikuti review video rumah aesthetic kami setiap hari.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="p-2.5 bg-slate-800 rounded-lg text-white hover:bg-blue-600 transition">📱
+                            Instagram</a>
+                        <a href="#" class="p-2.5 bg-slate-800 rounded-lg text-white hover:bg-blue-600 transition">🎥
+                            TikTok</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Line -->
+            <div class="border-t border-slate-800 pt-8 text-center text-xs text-slate-500">
+                <p>&copy; 2026 Masber Property. Hak Cipta Dilindungi. Desain premium khusus untuk kenyamanan Anda.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= MODAL: TITIP JUAL / SEWA ================= -->
+    <div id="modal-titip"
+        class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl w-full max-w-lg shadow-2xl overflow-hidden border border-slate-100 transition-all transform scale-95 duration-200"
+            id="modal-content">
+            <div class="bg-blue-600 p-6 text-white flex justify-between items-center">
+                <div>
+                    <h3 class="text-lg font-bold">Form Titip Jual / Sewa</h3>
+                    <p class="text-blue-100 text-xs mt-0.5">Rumah Anda langsung dipasarkan oleh tim profesional kami.
+                    </p>
+                </div>
+                <button onclick="closeTitipModal()"
+                    class="text-blue-100 hover:text-white p-2 rounded-full hover:bg-blue-700/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                        stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <form id="form-titip-jual" onsubmit="handleTitipJualSubmit(event)" class="p-6 space-y-4 text-sm">
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Nama Lengkap Pemilik</label>
+                    <input type="text" required
+                        class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Contoh: Budi Santoso">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 uppercase mb-1">No. WhatsApp</label>
+                        <input type="tel" required
+                            class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="Contoh: 0812...">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Lokasi Rumah</label>
+                        <input type="text" required
+                            class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="Contoh: Bogor Barat">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Tipe Penawaran</label>
+                        <select
+                            class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="jual">Titip Jual</option>
+                            <option value="sewa">Titip Sewa</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Harga yang
+                            Diinginkan</label>
+                        <input type="text" required
+                            class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="Contoh: 850 Juta">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Keterangan Singkat
+                        Properti</label>
+                    <textarea
+                        class="w-full bg-slate-50 border border-slate-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        rows="3" placeholder="Sebutkan luas tanah, bangunan, atau keunggulan khusus..."></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-blue-150">
+                    Kirim Formulir ke Admin
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- CUSTOM TOAST NOTIFICATION (Replaces alert) -->
+    <div id="toast"
+        class="hidden fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-4 rounded-2xl shadow-2xl flex items-center gap-3 border border-slate-800 transition-all transform translate-y-10">
+        <span class="p-1 bg-blue-500 text-slate-900 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
+                stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+        </span>
+        <p class="text-sm font-semibold" id="toast-message">Formulir berhasil terkirim!</p>
+    </div>
+
+    <!-- DATA & LOGIC SCRIPT -->
+    <script>
+        // MOCK DATA: 6 Properti Unggulan Masber Property
+        const propertiesData = [
+            {
+                id: 1,
+                title: "Cluster Emerald View Signature",
+                price: 950000000,
+                priceStr: "Rp 950 Juta",
+                location: "Bogor",
+                category: "baru", // baru / second / cluster
+                type: "Cluster Premium",
+                statusBadge: "Baru - Siap Huni",
+                sertifikat: "SHM + IMB",
+                lt: "120 m²",
+                lb: "90 m²",
+                kt: 3,
+                km: 2,
+                images: [
+                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80"
+                ],
+                deskripsi: "Cluster modern minimalis berlokasi strategis di bukit Bogor dengan pemandangan langsung Gunung Salak. Mengusung konsep Smart Home System, One Gate System dengan keamanan 24 jam serta lingkungan hijau nan asri yang bebas banjir. Cocok sekali untuk keluarga muda yang mengutamakan privasi dan prestise lingkungan.",
+                specifications: {
+                    "Pondasi": "Cakar Ayam / Beton Bertulang",
+                    "Dinding": "Bata Merah Double Wall, Plester, Aci",
+                    "Lantai": "Granit Tile 60x60",
+                    "Daya Listrik": "2200 VA (Underground)",
+                    "Sumber Air": "PDAM Tirta Pakuan",
+                    "Kusen & Pintu": "Kayu Jati / Aluminium Powder Coating",
+                    "Sanitair": "Toto / Setara",
+                    "Carport": "2 Mobil (Canopy Tempered Glass)"
+                },
+                facilities: [
+                    "⏱️ 5 Menit dari Exit Tol Bogor Selatan",
+                    "🏪 Dekat AEON Mall & Pusat Perbelanjaan",
+                    "🏫 Bersebelahan dengan Sekolah Internasional",
+                    "👮 Sistem Keamanan One Gate System & CCTV 24 Jam",
+                    "🏊 Club House Eksklusif & Kolam Renang warga"
+                ]
+            },
+            {
+                id: 2,
+                title: "Rumah Cantik Minimalis Modern",
+                price: 495000000,
+                priceStr: "Rp 495 Juta",
+                location: "Depok",
+                category: "baru",
+                type: "Komersil",
+                statusBadge: "PROMO DP 0%",
+                sertifikat: "SHM",
+                lt: "72 m²",
+                lb: "45 m²",
+                kt: 2,
+                km: 1,
+                images: [
+                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80"
+                ],
+                deskripsi: "Miliki hunian asri impian keluarga di kawasan Depok yang sedang berkembang pesat. Sangat cocok bagi Anda yang bekerja di area Jakarta dengan moda transportasi umum karena sangat dekat dengan akses Stasiun KRL. Bangunan berspesifikasi tinggi dengan harga bersahabat.",
+                specifications: {
+                    "Pondasi": "Batu Kali & Lajur Beton",
+                    "Dinding": "Hebal, Plester, Aci, Cat Jotun",
+                    "Lantai": "Keramik 40x40",
+                    "Daya Listrik": "1300 VA",
+                    "Sumber Air": "Sumur Bor Jetpump (Jernih)",
+                    "Kusen & Pintu": "Aluminium",
+                    "Rangka Atap": "Baja Ringan & Genteng Beton",
+                    "Carport": "1 Mobil"
+                },
+                facilities: [
+                    "⏱️ 10 Menit ke Stasiun KRL Depok Baru",
+                    "🏫 Dekat dengan Kampus UI & Gunadarma",
+                    "🛒 Dekat Margocity Mall Depok",
+                    "🛡️ Lingkungan Aman dengan portal satu pintu",
+                    "🕌 Dekat Masjid Jami setempat"
+                ]
+            },
+            {
+                id: 3,
+                title: "Townhouse Seken Premium Graha Asri",
+                price: 1250000000,
+                priceStr: "Rp 1.25 Milyar",
+                location: "Jakarta Selatan",
+                category: "second",
+                type: "Cluster Premium",
+                statusBadge: "Seken - Terawat Like New",
+                sertifikat: "SHM (On Hand)",
+                lt: "150 m²",
+                lb: "180 m² (2 Lantai)",
+                kt: 4,
+                km: 3,
+                images: [
+                    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=80"
+                ],
+                deskripsi: "Rumah tinggal mewah 2 lantai berlokasi di daerah premium Jagakarsa, Jakarta Selatan. Tata letak ruangan sangat fungsional dengan pencahayaan alami yang melimpah. Bangunan seken terawat istimewa seperti baru (baru dicat ulang), lingkungan tenang, bebas banjir, serta keamanan ekstra ketat.",
+                specifications: {
+                    "Pondasi": "Beton Bertulang Lajur & Footplate",
+                    "Dinding": "Bata Merah Double, Cat Dulux Premium",
+                    "Lantai": "Granit Tile Impat & Marmer tangga",
+                    "Daya Listrik": "3500 VA (Token)",
+                    "Sumber Air": "Jetpump + Filter Air + Toren",
+                    "Kusen & Pintu": "Kayu Kamper Oven Samarinda",
+                    "Sanitair": "Kohler & Toto",
+                    "Carport": "2 Mobil (Dilengkapi Garasi dalam)"
+                },
+                facilities: [
+                    "⏱️ 5 Menit dari Gerbang Tol Andara / Brigif",
+                    "🏪 Sangat dekat ke RS swasta & Sekolah Cikal",
+                    "🌳 Berjarak dekat dari Taman Margasatwa Ragunan",
+                    "👮 One Gate System terintegrasi Security 24 Jam",
+                    "⚡ Jaringan listrik & Internet bawah tanah"
+                ]
+            },
+            {
+                id: 4,
+                title: "Rumah Subsidi Modern Gading Serpong",
+                price: 185000000,
+                priceStr: "Rp 185 Juta",
+                location: "Tangerang",
+                category: "baru",
+                type: "Subsidi",
+                statusBadge: "Subsidi Pemerintah",
+                sertifikat: "HGB (Bisa Naik SHM)",
+                lt: "60 m²",
+                lb: "30 m²",
+                kt: 2,
+                km: 1,
+                images: [
+                    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1502005229762-fc1b2b812ca5?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80"
+                ],
+                deskripsi: "Program rumah subsidi terbaik dari pemerintah berlokasi di pinggiran Tangerang yang nempel area elite Gading Serpong. Suku bunga flat 5% sampai lunas. Menjadi kesempatan berharga bagi Anda pekerja pemula untuk segera mengamankan aset rumah tinggal sendiri dibanding mengontrak seumur hidup.",
+                specifications: {
+                    "Pondasi": "Batu Belah",
+                    "Dinding": "Batako Press, Plester, Aci, Finishing Cat",
+                    "Lantai": "Keramik 30x30",
+                    "Daya Listrik": "900 VA",
+                    "Sumber Air": "Sumur Pantek Standard",
+                    "Rangka Atap": "Baja Ringan & Genteng Metal",
+                    "Kusen & Pintu": "Kayu Lokal Awet",
+                    "Carport": "Tersedia space 1 mobil"
+                },
+                facilities: [
+                    "⏱️ 20 Menit ke Mall SMS Gading Serpong",
+                    "🚍 Akses mudah ke stasiun Cisauk",
+                    "🏫 Dekat Sekolah Negeri & Puskesmas terdekat",
+                    "🛝 Dilengkapi Area Bermain Anak & Lapangan Olahraga",
+                    "💧 Lingkungan terbukti bebas banjir tahunan"
+                ]
+            },
+            {
+                id: 5,
+                title: "Hunian Hoek Modern di Cluster Elit",
+                price: 1650000000,
+                priceStr: "Rp 1.65 Milyar",
+                location: "Tangerang",
+                category: "cluster",
+                type: "Cluster Premium",
+                statusBadge: "Hoek Premium Unit",
+                sertifikat: "SHM",
+                lt: "185 m²",
+                lb: "140 m²",
+                kt: 3,
+                km: 3,
+                images: [
+                    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1502005229762-fc1b2b812ca5?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80"
+                ],
+                deskripsi: "Hunian sudut (Hoek) yang menakjubkan dengan sisa tanah samping luas siap bangun di BSD City. Memiliki pencahayaan superior dari 3 sisi rumah dan sirkulasi angin yang sangat segar alami. Desain modern tropis berpadu material kualitas nomor satu menjadikan rumah ini bernilai investasi tinggi.",
+                specifications: {
+                    "Pondasi": "Beton Bertulang dengan Borpile",
+                    "Dinding": "Bata Merah Double, Finish Cat Nippon Paint Premium",
+                    "Lantai": "Granit Slab Super 80x80",
+                    "Daya Listrik": "3500 VA Underground",
+                    "Sumber Air": "WTP BSD City (Siap Minum)",
+                    "Kusen & Pintu": "Aluminium Solid & Pintu Engineering Wood",
+                    "Sanitair": "Grohe & Toto",
+                    "Carport": "2 Mobil"
+                },
+                facilities: [
+                    "⏱️ 3 Menit ke AEON Mall & ICE BSD",
+                    "🏫 Sangat dekat ke Universitas Prasetiya Mulya",
+                    "🛣️ Akses Tol Serpong - Balaraja",
+                    "🚴 Area taman jogging track yang asri dan luas",
+                    "👮 Sistem Keamanan Kartu RFID & Patroli 24 Jam"
+                ]
+            },
+            {
+                id: 6,
+                title: "Rumah Second Terawat di Kebayoran Baru",
+                price: 2450000000,
+                priceStr: "Rp 2.45 Milyar",
+                location: "Jakarta Selatan",
+                category: "second",
+                type: "Komersil",
+                statusBadge: "Nego Sampai Deal",
+                sertifikat: "SHM + IMB Clear",
+                lt: "160 m²",
+                lb: "200 m² (2 Lantai)",
+                kt: 5,
+                km: 4,
+                images: [
+                    "https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80"
+                ],
+                deskripsi: "Rumah seken super kokoh dan elegan dengan arsitektur klasik kolonial yang sangat terawat di kawasan strategis Kebayoran Baru. Layout bangunan lapang dengan ruang keluarga berukuran masif di lantai 1 dan lantai 2. Lokasi super prestisius, jaminan investasi jangka panjang.",
+                specifications: {
+                    "Pondasi": "Batu Belah & Beton Bertulang Kokoh",
+                    "Dinding": "Full Bata Merah Kualitas Super",
+                    "Lantai": "Ubin Klasik & Parket Kayu Jati Kamar Utama",
+                    "Daya Listrik": "4400 VA",
+                    "Sumber Air": "Air Tanah Dalam (Sangat Bersih)",
+                    "Atap": "Genteng Keramik Kanmuri",
+                    "Kusen & Pintu": "Full Kayu Jati Solid",
+                    "Carport": "Garasi Muat 2 Mobil + Carport 1 Mobil"
+                },
+                facilities: [
+                    "⏱️ Hanya selangkah ke MRT Blok M & Senayan",
+                    "🛍️ Dekat Mal Senayan City, Plaza Senayan & Gandaria City",
+                    "🏥 Sangat dekat ke RS Pusat Pertamina",
+                    "👮 Sistem Keamanan Lingkungan Terpadu",
+                    "🌳 Lokasi tenang dan banyak pohon rindang"
+                ]
+            }
+        ];
+
+        let filteredProperties = [...propertiesData];
+        let activeCategory = 'semua';
+        let selectedProperty = null;
+
+        // On Window Load: Render Properti Pertama Kali
+        window.onload = function () {
+            renderProperties();
+        };
+
+        // Navigation Engine (SPA State Handler)
+        function navigateTo(viewName) {
+            const homeView = document.getElementById('view-home');
+            const detailView = document.getElementById('view-detail');
+            const navHome = document.getElementById('nav-home');
+
+            if (viewName === 'home') {
+                homeView.classList.remove('hidden');
+                detailView.classList.add('hidden');
+                navHome.classList.add('text-blue-600', 'font-semibold');
+                navHome.classList.remove('text-slate-600', 'font-medium');
+                window.scrollTo(0, 0);
+            } else if (viewName === 'detail') {
+                homeView.classList.add('hidden');
+                detailView.classList.remove('hidden');
+                navHome.classList.remove('text-blue-600', 'font-semibold');
+                navHome.classList.add('text-slate-600', 'font-medium');
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Scroll to Section on Homepage Smoothly
+        function scrollToSection(sectionId) {
+            navigateTo('home');
+            setTimeout(() => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        }
+
+        // ==========================================
+        // NEW JAVASCRIPT LOGIC IMPLEMENTATION
+        // ==========================================
+
+        // Render Properties
+        function renderProperties(data = filteredProperties) {
+            const container = document.getElementById('property-list');
+            if (!container) return;
+            container.innerHTML = '';
+
+            if (data.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center py-10 text-slate-500">Tidak ada properti yang sesuai dengan filter Anda.</div>`;
+                return;
+            }
+
+            data.forEach(prop => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 overflow-hidden transition-all duration-300 transform hover:-translate-y-1 group";
+                card.innerHTML = `
+                    <div class="relative overflow-hidden aspect-[4/3] cursor-pointer" onclick="viewPropertyDetail(${prop.id})">
+                        <img src="${prop.images[0]}" alt="${prop.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-lg">${prop.statusBadge}</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-slate-900 leading-tight group-hover:text-blue-600 transition-colors cursor-pointer" onclick="viewPropertyDetail(${prop.id})">${prop.title}</h3>
+                        </div>
+                        <p class="text-2xl font-extrabold text-blue-600 mb-4">${prop.priceStr}</p>
+                        <div class="flex items-center text-slate-500 text-sm mb-4 gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+                            ${prop.location}
+                        </div>
+                        <div class="flex justify-between border-t border-slate-100 pt-4 mt-4">
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <span class="font-bold text-slate-800">${prop.kt}</span> <span class="text-xs">KT</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <span class="font-bold text-slate-800">${prop.km}</span> <span class="text-xs">KM</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-600">
+                                <span class="font-bold text-slate-800">${prop.lb}</span> <span class="text-xs">LB</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // View Property Detail
+        function viewPropertyDetail(id) {
+            navigateTo('detail');
+            window.scrollTo(0, 0);
+        }
+
+        // Filter by Category Button
+        function filterCategory(category) {
+            activeCategory = category;
+            
+            const buttons = ['semua', 'baru', 'second', 'cluster'];
+            buttons.forEach(btn => {
+                const el = document.getElementById(`btn-cat-${btn}`);
+                if (!el) return;
+                if (btn === category) {
+                    el.classList.add('bg-blue-600', 'text-white', 'shadow-blue-500/30');
+                    el.classList.remove('bg-white', 'text-slate-600', 'hover:bg-slate-50');
+                } else {
+                    el.classList.remove('bg-blue-600', 'text-white', 'shadow-blue-500/30');
+                    el.classList.add('bg-white', 'text-slate-600', 'hover:bg-slate-50');
+                }
+            });
+
+            applyFilters();
+        }
+
+        // Apply All Search Filters
+        function applyFilters() {
+            const lokasi = document.getElementById('filter-lokasi')?.value || 'semua';
+            const harga = document.getElementById('filter-harga')?.value || 'semua';
+            const tipe = document.getElementById('filter-tipe')?.value || 'semua';
+
+            filteredProperties = propertiesData.filter(prop => {
+                let matchLokasi = lokasi === 'semua' || prop.location === lokasi;
+                let matchTipe = tipe === 'semua' || prop.type === tipe;
+                let matchKategori = activeCategory === 'semua' || prop.category === activeCategory;
+                
+                let matchHarga = true;
+                if (harga === 'dibawah-500jt') matchHarga = prop.price < 500000000;
+                if (harga === '500jt-1m') matchHarga = prop.price >= 500000000 && prop.price <= 1000000000;
+                if (harga === 'diatas-1m') matchHarga = prop.price > 1000000000;
+
+                return matchLokasi && matchHarga && matchTipe && matchKategori;
+            });
+
+            renderProperties(filteredProperties);
+        }
+
+        // Reset Filters
+        function resetFilters() {
+            if(document.getElementById('filter-lokasi')) document.getElementById('filter-lokasi').value = 'semua';
+            if(document.getElementById('filter-harga')) document.getElementById('filter-harga').value = 'semua';
+            if(document.getElementById('filter-tipe')) document.getElementById('filter-tipe').value = 'semua';
+            filterCategory('semua');
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+
+        // Titip Modal Toggle
+        function openTitipModal() {
+            const modal = document.getElementById('titip-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function closeTitipModal() {
+            const modal = document.getElementById('titip-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        // KPR Calculator Logic
+        function formatNumberInput(input) {
+            let val = input.value.replace(/[^0-9]/g, '');
+            if(val) {
+                input.value = new Intl.NumberFormat('id-ID').format(val);
+            } else {
+                input.value = '';
+            }
+        }
+
+        function hitungKPR() {
+            const hargaEl = document.getElementById('kpr-harga');
+            const dpEl = document.getElementById('kpr-dp');
+            const bungaEl = document.getElementById('kpr-bunga');
+            const tenorEl = document.getElementById('kpr-tenor');
+            const cicilanEl = document.getElementById('kpr-cicilan-bulanan');
+
+            if (!hargaEl || !dpEl || !bungaEl || !tenorEl || !cicilanEl) return;
+
+            let harga = parseFloat(hargaEl.value.replace(/[^0-9]/g, '')) || 0; 
+            let dp = parseFloat(dpEl.value.replace(/[^0-9]/g, '')) || 0;
+            let bungaTahun = parseFloat(bungaEl.value) || 0;
+            let tenorTahun = parseInt(tenorEl.value) || 0;
+
+            let plafon = harga - dp;
+            if (plafon < 0) plafon = 0;
+
+            if (plafon > 0 && bungaTahun > 0 && tenorTahun > 0) {
+                let r = (bungaTahun / 100) / 12;
+                let n = tenorTahun * 12;
+                let cicilan = plafon * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+                
+                cicilanEl.innerText = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(cicilan);
+            } else {
+                cicilanEl.innerText = "Rp -";
+            }
+        }
+
+        // Attach event listeners when DOM is loaded
+        window.addEventListener('DOMContentLoaded', () => {
+            const kprInputs = ['kpr-harga', 'kpr-dp', 'kpr-bunga', 'kpr-tenor'];
+            kprInputs.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    if (id === 'kpr-harga' || id === 'kpr-dp') {
+                        el.addEventListener('input', function() {
+                            formatNumberInput(this);
+                            hitungKPR();
+                        });
+                    } else {
+                        el.addEventListener('change', hitungKPR);
+                        el.addEventListener('input', hitungKPR);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
